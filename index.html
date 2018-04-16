@@ -1,2 +1,61 @@
-<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1GkipIfDQ8IXPL5n362lOR_8f007c4J25XXLy5WJJToM&font=Default&lang=en&initial_zoom=0&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_-wQ5DlivyJBIVNl5fViPgGrMa-fLWrV0s0mJs09_2z55_A/viewform?embedded=true" width="100%" height="2800px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<html>
+	<head>
+		<title>CU Music Education Timeline</title>
+		<style>
+			.tab {
+				background-color: gold;
+				width: 150px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-family: arial;
+				display: inline-block;
+			}
+			
+			.tab:hover {
+				background-color: goldenrod;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="eventTimeline" class="tab" onclick="changeToEventTimeline()">Event Timeline</div>
+		<div id="addEvent" class="tab" onclick="changeToAddEvent()">Add Event</div>
+		<div id="peopleTimeline" class="tab" onclick="changeToPeopleTimeline()">People Timeline</div>
+		<div id="addPerson" class="tab" onclick="changeToAddPerson()">Add Person</div>
+		<span id="content">
+			<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1GkipIfDQ8IXPL5n362lOR_8f007c4J25XXLy5WJJToM&font=Default&lang=en&initial_zoom=0&height=650" width="100%" height="650" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>
+		</span>
+	</body>
+	<script>
+		var current = 0;
+	
+		function changeToEventTimeline() {
+			if (current != 0) {
+				document.getElementById('content').innerHTML = '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1GkipIfDQ8IXPL5n362lOR_8f007c4J25XXLy5WJJToM&font=Default&lang=en&initial_zoom=0&height=650" width="100%" height="650" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>';
+				current = 0;
+			};
+		};
+		
+		function changeToAddEvent() {
+			if (current != 1) {
+				document.getElementById('content').innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_-wQ5DlivyJBIVNl5fViPgGrMa-fLWrV0s0mJs09_2z55_A/viewform?embedded=true" width="100%" height="2800px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+				current = 1;
+			};
+		};
+		
+		function changeToPeopleTimeline() {
+			if (current != 2) {
+				document.getElementById('content').innerHTML = '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=17f2V7rBEjhxkP-J1_95D7IUV401BvxveoVfaZskb-gA&font=Default&lang=en&initial_zoom=2&height=650" width="100%" height="650" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>';
+				current = 2;
+			};
+		};
+		
+		function changeToAddPerson() {
+			if (current != 3) {
+				document.getElementById('content').innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2hvttfWMyIphp8ZDPJhCIoqPzlW1YtVSpoMfRTrl2jX8J6Q/viewform?embedded=true" width="100%" height="2800px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+				current = 3;
+			};
+		};
+	</script>
+</html>
